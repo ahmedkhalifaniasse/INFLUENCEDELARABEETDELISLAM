@@ -831,6 +831,54 @@
             overflow-y: scroll !important;
             height: 100vh;
         }
+      /* Styles pour le zoom */
+.zoomed {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 3000 !important;
+    background: #000 !important;
+    cursor: zoom-out !important;
+    overflow: auto !important;
+}
+
+.zoomed .page-image {
+    width: auto !important;
+    height: auto !important;
+    max-width: 200% !important;
+    max-height: 200% !important;
+    object-fit: contain !important;
+    cursor: grab !important;
+    transition: transform 0.3s ease !important;
+}
+
+.zoomed .page-image:active {
+    cursor: grabbing !important;
+}
+
+/* Désactive la navigation pendant le zoom */
+.zoomed ~ .navigation-overlay,
+.zoomed ~ .top-bar,
+.zoomed ~ .bottom-bar {
+    display: none !important;
+}
+
+/* Touch hint pendant le zoom */
+.zoom-hint {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 3001;
+    display: none;
+}
     </style>
 </head>
 <body>
@@ -928,6 +976,8 @@ Ancien Ambassadeur et Ministre d’État de la République du Sénégal, Ahmed K
                 this.isAnimating = false;
                 this.barsVisible = true;
                 this.hideBarsTimeout = null;
+                  this.isZoomed = false; // AJOUTE CETTE LIGNE
+
                 this.isLightMode = true;
                 this.imagesLoaded = 0;
                 
@@ -1430,6 +1480,31 @@ Ancien Ambassadeur et Ministre d’État de la République du Sénégal, Ahmed K
                 let touchStartY = 0;
                 let touchEndX = 0;
                 let touchEndY = 0;
+              // Dans setupEventListeners(), ajoute :
+let zoomTimeout;
+document.addEventListener('wheel', (e) => {
+    if (this.isZoomed && e.ctrlKey) {
+        e.preventDefault();
+        
+        const zoomedImage = document.querySelector('.zoomed .page-image');
+        if (!zoomedImage) return;
+        
+        clearTimeout(zoomTimeout);
+        
+        const currentScale = parseFloat(zoomedImage.style.transform?.replace('scale(', '')?.replace(')', '')) || 1;
+        const delta = e.deltaY > 0 ? -0.1 : 0.1;
+        const newScale = Math.max(1, Math.min(3, currentScale + delta));
+        
+        zoomedImage.style.transform = `scale(${newScale})`;
+        
+        // Si scale revient à 1, sortir du zoom
+        zoomTimeout = setTimeout(() => {
+            if (newScale <= 1.1) {
+                this.exitZoom();
+            }
+        }, 500);
+    }
+}, { passive: false });
                 
                 document.addEventListener('touchstart', (e) => {
                     touchStartX = e.changedTouches[0].screenX;
@@ -1754,6 +1829,76 @@ Ancien Ambassadeur et Ministre d’État de la République du Sénégal, Ahmed K
                 this.showBars();
             }
 
+          toggleZoom() {
+    if (this.isAnimating) return;
+    
+    const currentPage = document.querySelector('.book-page.active');
+    if (!currentPage) return;
+    
+    if (!this.isZoomed) {
+        // Activer le zoom
+        this.isZoomed = true;
+        currentPage.classList.add('zoomed');
+        
+        // Afficher l'indication
+        const hint = document.createElement('div');
+        hint.className = 'zoom-hint';
+        hint.innerHTML = 'Pincer pour zoomer • Double-cliquer pour sortir';
+        document.body.appendChild(hint);
+        hint.style.display = 'block';
+        
+        // Cacher après 3 secondes
+        setTimeout(() => {
+            hint.style.display = 'none';
+        }, 3000);
+        
+        // Désactiver la navigation
+        document.querySelector('.navigation-overlay').style.pointerEvents = 'none';
+        
+        // Double-clic pour quitter le zoom
+        currentPage.addEventListener('dblclick', this.exitZoom.bind(this));
+        
+        // Touch events pour mobile
+        let initialDistance = 0;
+        currentPage.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 2) {
+                initialDistance = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+            }
+        });
+        
+        currentPage.addEventListener('touchend', (e) => {
+            if (e.touches.length < 2 && initialDistance > 0) {
+                // Si on réduit le pincement, sortir du zoom
+                this.exitZoom();
+            }
+        });
+        
+    } else {
+        this.exitZoom();
+    }
+}
+
+exitZoom() {
+    const zoomedPage = document.querySelector('.book-page.zoomed');
+    if (!zoomedPage) return;
+    
+    this.isZoomed = false;
+    zoomedPage.classList.remove('zoomed');
+    
+    // Réactiver la navigation
+    document.querySelector('.navigation-overlay').style.pointerEvents = 'auto';
+    
+    // Supprimer l'indication
+    const hint = document.querySelector('.zoom-hint');
+    if (hint) hint.remove();
+    
+    // Retirer l'écouteur d'événement
+    zoomedPage.removeEventListener('dblclick', this.exitZoom);
+}
+          
             loadThemePreference() {
                 const savedTheme = localStorage.getItem('bookReaderTheme');
                 // Mode clair par défaut sauf si l'utilisateur a explicitement choisi le mode sombre

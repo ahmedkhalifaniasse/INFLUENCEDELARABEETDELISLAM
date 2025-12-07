@@ -1372,7 +1372,7 @@ Ancien Ambassadeur et Ministre d’État de la République du Sénégal, Ahmed K
                 `;
                 app.appendChild(privacyPage);
             }
-
+          
             preloadImages() {
                 const preloader = document.getElementById('imagePreloader');
                 const loadingText = document.querySelector('.loading-text');
@@ -1383,7 +1383,7 @@ Ancien Ambassadeur et Ministre d’État de la République du Sénégal, Ahmed K
                     img.onload = () => {
                         this.imagesLoaded++;
                         const progress = Math.round((this.imagesLoaded / this.totalImages) * 100);
-                        loadingText.textContent = `Chargement... ${progress}%`;
+                        loadingText.textContent = `Merci de patienter un instant. Nous allons télécharger toutes les pages en une seule fois... ${progress}%`;
                         
                         if (this.imagesLoaded === this.totalImages) {
                             setTimeout(() => {

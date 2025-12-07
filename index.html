@@ -348,7 +348,7 @@
         }
 
         body.light-mode .page-turn-animation .page-back {
-            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            background: linear-gradient(45deg, #f0f0f0, #e0e0f0);
         }
 
         .turn-left {
@@ -881,7 +881,7 @@
         <div class="app-title">BAYE NIASS, LE FRACASSANT</div>
         <div class="page-indicator" id="pageIndicator"> </div>
         <div class="search-container" id="searchContainer" style="display: none;">
-            <input type="number" id="pageSearch" placeholder="Numéro de page..." min="5" max="283">
+            <input type="number" id="pageSearch" placeholder="Numéro de page..." min="5" max="200">
             <button id="goToPageBtn">
                 <i class="fas fa-arrow-right"></i>
             </button>
@@ -909,156 +909,90 @@
     </div>
 
     <div id="app">
-        <!-- Page d'accueil (Couverture) -->
-        <div class="page book-page active" id="home">
-            <img src="https://i.postimg.cc/Kc9mFHsm/1.png" alt="Page 1" class="page-image">
-        </div>
-
-        <!-- Pages de lecture -->
-        <div class="page book-page" id="reading">
-            <img src="https://i.postimg.cc/9Q0gkRNp/5884476547442347084.jpg" alt="Page 2" class="page-image">
-        </div>
-<!-- Pages de lecture supplémentaires -->
-<div class="page book-page" id="page1">
-    <img src="https://i.postimg.cc/9Q0gkRNp/5884476547442347084.jpg" alt="Page 1" class="page-image">
-</div>
-<div class="page book-page" id="page2">
-    <img src="https://i.postimg.cc/W1zYyFfS/5884476547442347085.jpg" alt="Page 2" class="page-image">
-</div>
-<div class="page book-page" id="page3">
-    <img src="https://i.postimg.cc/SxR1P2tD/5884476547442347086.jpg" alt="Page 3" class="page-image">
-</div>
-<div class="page book-page" id="page4">
-    <img src="https://i.postimg.cc/dt4Snmn9/5884476547442347087.jpg" alt="Page 4" class="page-image">
-</div>
-<div class="page book-page" id="page5">
-    <img src="https://i.postimg.cc/dV3NfkSG/5884476547442347088.jpg" alt="Page 5" class="page-image">
-</div>
-<div class="page book-page" id="page6">
-    <img src="https://i.postimg.cc/QdCYz9nJ/5884476547442347089.jpg" alt="Page 6" class="page-image">
-</div>
-<div class="page book-page" id="page7">
-    <img src="https://i.postimg.cc/y8xpGgrQ/5884476547442347090.jpg" alt="Page 7" class="page-image">
-</div>
-<div class="page book-page" id="page8">
-    <img src="https://i.postimg.cc/jS231wkw/5884476547442347091.jpg" alt="Page 8" class="page-image">
-</div>
-<div class="page book-page" id="page9">
-    <img src="https://i.postimg.cc/mgkpnz69/5884476547442347092.jpg" alt="Page 9" class="page-image">
-</div>
-<div class="page book-page" id="page10">
-    <img src="https://i.postimg.cc/y8xpGgrm/5884476547442347093.jpg" alt="Page 10" class="page-image">
-</div>
-<div class="page book-page" id="page11">
-    <img src="https://i.postimg.cc/FsDnGgG1/5884476547442347094.jpg" alt="Page 11" class="page-image">
-</div>
-<div class="page book-page" id="page12">
-    <img src="https://i.postimg.cc/65Y1zLz2/5884476547442347096.jpg" alt="Page 12" class="page-image">
-</div>
-<div class="page book-page" id="page13">
-    <img src="https://i.postimg.cc/yYvrnXn3/5884476547442347097.jpg" alt="Page 13" class="page-image">
-</div>
-<div class="page book-page" id="page14">
-    <img src="https://i.postimg.cc/hPp3MbM8/5884476547442347098.jpg" alt="Page 14" class="page-image">
-</div>
-<div class="page book-page" id="page15">
-    <img src="https://i.postimg.cc/vH3SXLXw/5884476547442347099.jpg" alt="Page 15" class="page-image">
-</div>
-<div class="page book-page" id="page16">
-    <img src="https://i.postimg.cc/kXnpxhNX/5884476547442347101.jpg" alt="Page 16" class="page-image">
-</div>
-<div class="page book-page" id="page17">
-    <img src="https://i.postimg.cc/L6N0vBv2/5884476547442347102.jpg" alt="Page 17" class="page-image">
-</div>
-<div class="page book-page" id="page18">
-    <img src="https://i.postimg.cc/FsDnGgGr/5884476547442347103.jpg" alt="Page 18" class="page-image">
-</div>
-<div class="page book-page" id="page19">
-    <img src="https://i.postimg.cc/4NBFwbwy/5884476547442347104.jpg" alt="Page 19" class="page-image">
-</div>
-<div class="page book-page" id="page20">
-    <img src="https://i.postimg.cc/kXnpxhNn/5884476547442347105.jpg" alt="Page 20" class="page-image">
-</div>
-<div class="page book-page" id="page21">
-    <img src="https://i.postimg.cc/jdsFzk6q/5884476547442347106.jpg" alt="Page 21" class="page-image">
-</div>
-<div class="page book-page" id="page22">
-    <img src="https://i.postimg.cc/3JKcgbjw/5884476547442347107.jpg" alt="Page 22" class="page-image">
-</div>
-<div class="page book-page" id="page23">
-    <img src="https://i.postimg.cc/3JKcgbjw/5884476547442347108.jpg" alt="Page 23" class="page-image">
-</div>
-
-
-        <!-- Page Biographie -->
-        <div class="page content-page" id="bio">
-            <div class="content">
-                <!-- Contenu de la biographie -->
-            </div>
-        </div>
-
-        <!-- Page Politique de Confidentialité -->
-        <div class="page content-page" id="privacy">
-            <h1>Politique de Confidentialité</h1>
-            <p>Dernière mise à jour : 1er décembre 2025</p>
-            
-            <h2>Collecte des Informations</h2>
-            <p>Nous collectons uniquement les informations nécessaires au fonctionnement de l'application. Aucune donnée personnelle n'est stockée sur nos serveurs.</p>
-            
-            <h2>Utilisation des Données</h2>
-            <p>Les données de lecture (progression) sont stockées localement sur votre appareil. Ces informations ne quittent jamais votre appareil.</p>
-            
-            <h2>Cookies</h2>
-            <p>Cette application n'utilise pas de cookies de suivi. Seuls les cookies techniques essentiels au fonctionnement peuvent être utilisés.</p>
-            
-            <h2>Vos Droits</h2>
-            <p>Vous avez le droit d'accéder à vos données, de les rectifier ou de les supprimer. Pour exercer ces droits, contactez-nous.</p>
-            
-            <h2>Contact</h2>
-            <p>Pour toute question concernant cette politique de confidentialité, contactez-nous à : ahmedkhalifaniasse00@gmail.com</p>
-        </div>
+        <!-- Les pages seront générées automatiquement par JavaScript -->
     </div>
 
     <script>
         class BookReader {
             constructor() {
                 this.currentPage = 1;
-                this.totalPages = 283;
+                this.totalPages = 0; // Sera calculé automatiquement
                 this.currentSection = 'home';
                 this.isAnimating = false;
                 this.barsVisible = true;
                 this.hideBarsTimeout = null;
                 this.isLightMode = true;
                 this.imagesLoaded = 0;
-                this.totalImages = 12;
-               this.pageImages = [
-    'https://i.postimg.cc/9Q0gkRNp/5884476547442347084.jpg',
-    'https://i.postimg.cc/W1zYyFfS/5884476547442347085.jpg',
-    'https://i.postimg.cc/SxR1P2tD/5884476547442347086.jpg',
-    'https://i.postimg.cc/dt4Snmn9/5884476547442347087.jpg',
-    'https://i.postimg.cc/dV3NfkSG/5884476547442347088.jpg',
-    'https://i.postimg.cc/QdCYz9nJ/5884476547442347089.jpg',
-    'https://i.postimg.cc/y8xpGgrQ/5884476547442347090.jpg',
-    'https://i.postimg.cc/jS231wkw/5884476547442347091.jpg',
-    'https://i.postimg.cc/mgkpnz69/5884476547442347092.jpg',
-    'https://i.postimg.cc/y8xpGgrm/5884476547442347093.jpg',
-    'https://i.postimg.cc/FsDnGgG1/5884476547442347094.jpg',
-    'https://i.postimg.cc/vH3SXLXt/5884476547442347095.jpg',
-    'https://i.postimg.cc/65Y1zLz2/5884476547442347096.jpg',
-    'https://i.postimg.cc/yYvrnXn3/5884476547442347097.jpg',
-    'https://i.postimg.cc/hPp3MbM8/5884476547442347098.jpg',
-    'https://i.postimg.cc/vH3SXLXw/5884476547442347099.jpg',
-    'https://i.postimg.cc/kXnpxhNX/5884476547442347100.jpg',
-    'https://i.postimg.cc/L6N0vBv2/5884476547442347101.jpg',
-    'https://i.postimg.cc/FsDnGgGr/5884476547442347102.jpg',
-    'https://i.postimg.cc/4NBFwbwy/5884476547442347103.jpg',
-    'https://i.postimg.cc/kXnpxhNn/5884476547442347104.jpg',
-    'https://i.postimg.cc/jdsFzk6q/5884476547442347105.jpg',
-    'https://i.postimg.cc/3JKcgbjw/5884476547442347106.jpg'
-];
+                
+                // METS TOUTES TES IMAGES ICI !
+                // La première image sera la page 5
+                // La deuxième image sera la page 6, etc.
+                this.pageImages = [
+                    // EXEMPLE - REMPLACE AVEC TES VRAIES URLS
+                    'https://i.postimg.cc/9Q0gkRNp/5884476547442347084.jpg', // Page 5
+                    'https://i.postimg.cc/W1zYyFfS/5884476547442347085.jpg', // Page 6
+                    'https://i.postimg.cc/SxR1P2tD/5884476547442347086.jpg', // Page 7
+                    'https://i.postimg.cc/dt4Snmn9/5884476547442347087.jpg', // Page 8
+                    'https://i.postimg.cc/dV3NfkSG/5884476547442347088.jpg', // Page 9
+                    'https://i.postimg.cc/QdCYz9nJ/5884476547442347089.jpg', // Page 10
+                    'https://i.postimg.cc/y8xpGgrQ/5884476547442347090.jpg', // Page 11
+                    'https://i.postimg.cc/jS231wkw/5884476547442347091.jpg', // Page 12
+                    'https://i.postimg.cc/mgkpnz69/5884476547442347092.jpg', // Page 13
+                    'https://i.postimg.cc/y8xpGgrm/5884476547442347093.jpg', // Page 14
+                    'https://i.postimg.cc/FsDnGgG1/5884476547442347094.jpg', // Page 15
+                     // Page 16
+                    'https://i.postimg.cc/65Y1zLz2/5884476547442347096.jpg', // Page 17
+                    'https://i.postimg.cc/yYvrnXn3/5884476547442347097.jpg', // Page 18
+                    'https://i.postimg.cc/hPp3MbM8/5884476547442347098.jpg', // Page 19
+                    'https://i.postimg.cc/vH3SXLXw/5884476547442347099.jpg', // Page 20
+                    'https://i.postimg.cc/kXnpxhNX/5884476547442347100.jpg', // Page 21
+                    'https://i.postimg.cc/L6N0vBv2/5884476547442347101.jpg', // Page 22
+                    'https://i.postimg.cc/FsDnGgGr/5884476547442347102.jpg', // Page 23
+                    'https://i.postimg.cc/4NBFwbwy/5884476547442347103.jpg', // Page 24
+                    'https://i.postimg.cc/kXnpxhNn/5884476547442347104.jpg', // Page 25
+                    'https://i.postimg.cc/jdsFzk6q/5884476547442347105.jpg', // Page 26
+                    'https://i.postimg.cc/3JKcgbjw/5884476547442347106.jpg',
+                  'https://i.postimg.cc/rmYYM5Z1/5886728347256032032.jpg', // Page 26
+                   
+                    
+  'https://i.postimg.cc/ZRqDGwHy/5886728347256032033.jpg',
+  'https://i.postimg.cc/9MNNCygB/5886728347256032034.jpg',  // Page 28
+  'https://i.postimg.cc/rmpYBfj1/5886728347256032035.jpg', // page 29 a refaire 
+  'https://i.postimg.cc/zBPP8T2T/5886728347256032036.jpg',
+  'https://i.postimg.cc/Y9Sy5dRC/5886728347256032037.jpg',
+  'https://i.postimg.cc/fLbgG8Cj/5886728347256032038.jpg',
+  'https://i.postimg.cc/MTGrC95H/5886728347256032039.jpg',
+  'https://i.postimg.cc/j5jkpMcd/5886728347256032040.jpg',
+  'https://i.postimg.cc/HLdN2Y7t/5886728347256032041.jpg',
+  'https://i.postimg.cc/g0sTtCvB/5886728347256032042.jpg',
+  'https://i.postimg.cc/6pdSn2TT/5886728347256032043.jpg',
+                    'https://i.postimg.cc/rmpYBfj1/5886728347256032035.jpg', //38
 
-
-                // Définition du sommaire
+  'https://i.postimg.cc/SxW5C2js/5886728347256032044.jpg',
+  'https://i.postimg.cc/nhv5BjMZ/5886728347256032045.jpg',
+  'https://i.postimg.cc/B6vwrmpj/5886728347256032046.jpg',
+  'https://i.postimg.cc/LX002jQ1/5886728347256032047.jpg',
+  'https://i.postimg.cc/1zBj7kG5/5886728347256032048.jpg',
+  'https://i.postimg.cc/hjG3k2sK/5886728347256032049.jpg',
+  'https://i.postimg.cc/GpK5gWkZ/5886728347256032050.jpg',
+  'https://i.postimg.cc/mrBnwLFq/5886728347256032051.jpg',
+  'https://i.postimg.cc/SKdv1BWB/5886728347256032052.jpg',
+  'https://i.postimg.cc/q7w5DP8w/5886728347256032053.jpg',
+  'https://i.postimg.cc/GpK5gWk7/5886728347256032054.jpg',
+  'https://i.postimg.cc/hGcYrD7y/5886728347256032055.jpg',
+  'https://i.postimg.cc/CKS2Nhfn/5886728347256032056.jpg',
+  'https://i.postimg.cc/kgxZK6Dg/5886728347256032057.jpg',
+  'https://i.postimg.cc/TPfs9dWh/5886728347256032058.jpg',
+  'https://i.postimg.cc/GpK5gWFd/5886728347256032059.jpg',
+  'https://i.postimg.cc/jjt1XxJ6/5886728347256032060.jpg',
+ 
+                    
+                ];
+                
+                this.totalImages = this.pageImages.length;
+                this.totalPages = this.totalImages;
+                
+                // Définition du sommaire (ajuste selon tes pages)
                 this.sommaire = [
                     { title: "Couverture", page: 1 },
                     { title: "Introduction", page: 5 },
@@ -1069,15 +1003,70 @@
                     { title: "Chapitre 5: Conclusion", page: 10 },
                     { title: "Crédits", page: 11 },
                     { title: "Fin", page: 12 }
+                    // Ajoute d'autres chapitres si besoin...
                 ];
 
                 this.init();
             }
 
             init() {
+                this.generatePages();
                 this.preloadImages();
                 this.setupEventListeners();
                 this.updatePageIndicator();
+            }
+
+            generatePages() {
+                const app = document.getElementById('app');
+                
+                // Crée la page de couverture (home)
+                const homePage = document.createElement('div');
+                homePage.className = 'page book-page active';
+                homePage.id = 'home';
+                homePage.innerHTML = `
+                    <img src="${this.pageImages[0]}" alt="Page 1" class="page-image">
+                `;
+                app.appendChild(homePage);
+                
+                // Crée toutes les autres pages de lecture
+                for (let i = 1; i < this.pageImages.length; i++) {
+                    const page = document.createElement('div');
+                    page.className = 'page book-page';
+                    
+                    // page2 = première page de lecture
+                    // page3 = deuxième page de lecture, etc.
+                    page.id = `page${i + 1}`;
+                    
+                    page.innerHTML = `
+                        <img src="${this.pageImages[i]}" alt="Page ${i + 1}" class="page-image">
+                    `;
+                    app.appendChild(page);
+                }
+                
+                // Ajoute la page de confidentialité
+                const privacyPage = document.createElement('div');
+                privacyPage.className = 'page content-page';
+                privacyPage.id = 'privacy';
+                privacyPage.innerHTML = `
+                    <h1>Politique de Confidentialité</h1>
+                    <p>Dernière mise à jour : 1er décembre 2025</p>
+                    
+                    <h2>Collecte des Informations</h2>
+                    <p>Nous collectons uniquement les informations nécessaires au fonctionnement de l'application. Aucune donnée personnelle n'est stockée sur nos serveurs.</p>
+                    
+                    <h2>Utilisation des Données</h2>
+                    <p>Les données de lecture (progression) sont stockées localement sur votre appareil. Ces informations ne quittent jamais votre appareil.</p>
+                    
+                    <h2>Cookies</h2>
+                    <p>Cette application n'utilise pas de cookies de suivi. Seuls les cookies techniques essentiels au fonctionnement peuvent être utilisés.</p>
+                    
+                    <h2>Vos Droits</h2>
+                    <p>Vous avez le droit d'accéder à vos données, de les rectifier ou de les supprimer. Pour exercer ces droits, contactez-nous.</p>
+                    
+                    <h2>Contact</h2>
+                    <p>Pour toute question concernant cette politique de confidentialité, contactez-nous à : ahmedkhalifaniasse00@gmail.com</p>
+                `;
+                app.appendChild(privacyPage);
             }
 
             preloadImages() {
@@ -1275,7 +1264,7 @@
                     if (this.currentSection === 'home') {
                         this.switchSection('reading');
                     } else if (this.currentSection === 'reading') {
-                        if (this.currentPage < this.totalPages) {
+                        if (this.currentPage < this.totalPages + 1) {
                             this.currentPage++;
                             this.showPageTurnAnimation('right');
                             this.updatePage();
@@ -1324,7 +1313,7 @@
                 this.currentSection = section;
                 
                 if (section === 'reading') {
-                    this.currentPage = 2; // Page de lecture
+                    this.currentPage = 2; // Page de lecture (première image après la couverture)
                     this.updatePageIndicator();
                 } else if (section === 'home') {
                     this.currentPage = 1;
@@ -1393,9 +1382,9 @@
             updatePageIndicator() {
                 const indicator = document.getElementById('pageIndicator');
                 if (this.currentSection === 'reading') {
-                    // Afficher 2/12 quand on commence la lecture
-                    const pageNumber = this.currentPage - 1;
-                    indicator.textContent = `Page ${pageNumber}/${this.totalPages}`;
+                    // Calculer le numéro de page réel (page 5 pour la première image)
+                    const pageNumber = this.currentPage + 3; // currentPage=2 → page=5
+                    indicator.textContent = `Page ${pageNumber}/${this.totalPages + 4}`;
                 } else {
                     indicator.textContent = this.getSectionTitle(this.currentSection);
                 }
@@ -1423,9 +1412,11 @@
                     const tocItem = document.createElement('div');
                     tocItem.className = 'toc-item';
                     
-                    // Calculer le numéro de page réel (page 5 = image index 2)
-                    const imageIndex = item.page - 3;
-                    if (imageIndex === this.currentPage - 2) {
+                    // Calculer le numéro de page réel (page 5 = image index 0)
+                    const imageIndex = item.page - 5; // page 5 → index 0
+                    const currentImageIndex = this.currentPage - 2; // currentPage=2 → index 0
+                    
+                    if (imageIndex === currentImageIndex) {
                         tocItem.classList.add('active');
                     }
                     
@@ -1453,7 +1444,10 @@
                 const input = document.getElementById('pageSearch');
                 const pageNumber = parseInt(input.value);
                 
-                if (!isNaN(pageNumber) && pageNumber >= 5 && pageNumber <= 283) {
+                // Calculer la limite maximale
+                const maxPage = this.totalPages + 4; // Par exemple: 24 images → max page 28
+                
+                if (!isNaN(pageNumber) && pageNumber >= 5 && pageNumber <= maxPage) {
                     this.goToPageNumber(pageNumber);
                     input.value = '';
                 } else {
@@ -1472,13 +1466,15 @@
                 // Cacher le TOC si ouvert
                 this.hideTOC();
                 
-                // Convertir le numéro de page (5-12) en index de page (2-9)
-                // Car page 5 = image index 2, page 6 = index 3, etc.
-                const pageIndex = pageNumber - 3;
+                // Convertir le numéro de page (5-200) en index de page
+                // page 5 = image index 0 (première image)
+                // page 6 = image index 1
+                // etc.
+                const imageIndex = pageNumber - 5;
                 
-                if (pageIndex >= 2 && pageIndex <= this.totalPages + 1) {
+                if (imageIndex >= 0 && imageIndex < this.pageImages.length) {
                     this.switchSection('reading');
-                    this.currentPage = pageIndex;
+                    this.currentPage = imageIndex + 2; // +2 car currentPage=2 pour la première image
                     this.updatePage();
                     this.showPageTurnAnimation('right');
                 }
